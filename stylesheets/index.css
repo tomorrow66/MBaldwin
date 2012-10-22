@@ -1,0 +1,443 @@
+@import url(http://fonts.googleapis.com/css?family=?????);
+
+html {
+	font-size: 62.5%;
+	width: 100%;
+	background-color: #222;	
+}
+
+body{
+	min-width: 360px;
+	width: 100%;
+	font-family: 'Helvetica Neue','Helvetica', sans-serif;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	color: #222;
+}
+
+em {
+	font-style: italic;	
+}
+
+#contentContainer {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;	
+	padding: 10px 0px;
+	background-color: #fff;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 3.2rem;
+	line-height: 4.8rem;
+	font-weight: 700;
+}
+
+h2, h3 {
+	font-family: Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 2.4rem;
+	line-height: 3.6rem;
+}
+
+h3{
+	font-size: 2.0rem;
+	line-height: 3.0rem;
+}
+
+strong {
+	font-weight: 700;
+}
+
+p {
+	padding: 5px 0px;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.strike {
+	text-decoration: line-through;
+}
+
+.pale {
+	color: #fff;
+}
+
+/* Default Position and Display Classes */
+.center {margin-left: auto; margin-right: auto;}
+.textCenter {text-align: center;}
+.left {float: left;}
+.right {float: right;}
+.hide {display: none;}
+.inline {display: inline}
+.inlineBlock {display: inline-block;}
+.block {display: block;}
+
+/* Default Margin and Padding Classes */
+.pad {padding: 20px;}
+.padTop {padding-top: 20px;}
+.padLeft {padding-left: 20px;}
+.padRight {padding-right: 20px;}
+.padBottom {padding-bottom: 20px;}
+.marign {margin: 20px;}
+.marginTop {margin-top: 20px;}
+.marginLeft {margin-left: 20px;}
+.marginRight {margin-right: 20px;}
+.marginBottom {margin-bottom: 20px;}
+
+/* Default Border-radius and Box-shadow Classes */
+.rounded {border-radius: 8px 8px;}
+.roundedTop {border-top-left-radius: 8px 8px; border-top-right-radius: 8px 8px;}
+.roundedBottom {border-bottom-left-radius: 8px 8px; border-bottom-right-radius: 8px 8px;}
+.shadow {box-shadow: -0px 10px 20px 1px rgba(0,0,0,0.3), 0px 10px 20px 1px rgba(0,0,0,0.3);}
+
+/* Default visual aspects */
+.ovAuto {overflow: auto;}
+.inlineBlock {display: inline-block;}
+.borders {border: 1px solid #bcbcbc;}
+.borderTop {border-top: 1px solid #bcbcbc;}
+.borderLeft {border-left: 1px solid #bcbcbc;}
+.borderRight {border-right: 1px solid #bcbcbc;}
+.borderBottom {border-bottom: 1px solid #bcbcbc;}
+
+.active {
+	text-decoration: underline;
+}
+
+.container {
+	width: 100%;
+	max-width: 920px;
+	margin: 0 auto;
+}
+
+header {
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+.logo a {
+	color: rgba(92, 170, 81, 1.0)
+}
+
+ul.touch {
+	margin-top: 17px;
+	width: 350px;
+}
+
+ul.touch li {
+	display: inline;
+	padding: 6px;	
+}
+
+ul.touch li a {
+	font-size: 100%;
+	color: #dedede;
+}
+
+ul.blog li {
+	border-bottom: 1px solid silver;
+	padding: 11px 0;	
+}
+
+ul.blog li:last-child {
+	border-bottom: 0px solid transparent;
+}
+
+ul.blog.unbordered {
+	border: 0px solid transparent;
+}
+
+ul.blog li ul, div.padTop.padBottom ul {
+	list-style-type: square;
+	padding-left: 20px;
+}
+
+ul.blog li ul li, ul.blog li ol li, p ol li, div.padTop.padBottom ul li {
+	padding: 0;
+	border: 0px solid transparent; 
+}
+
+ul.blog li ol, div.padTop.padBottom ol {
+	list-style-type: decimal;
+	padding-left: 20px;
+}
+
+.banner {
+	width: 100%;
+}
+
+.two-thirds {
+	width: 64%;
+}
+
+.one-third {
+	width: 32%;
+}
+
+li.delight img.two-thirds, li.family img.two-thirds, li.teach img.two-thirds, li.notProduction img.two-thirds {
+}
+
+.latest, .half {
+	width: 48%;
+}
+
+.whole {
+	width: 100%;
+}
+
+footer {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 920px;
+}
+
+footer p {
+	color: #dedede;	
+}
+
+div#wrapper-content.production {
+	border: 1px solid #bcbcbc;
+	width: 93.75%;
+	max-width: 860px;
+	margin: -2px auto 30px auto;
+	padding: 10px 3.125%;
+	background-image: none;
+}
+
+div#wrapper-content.production h2, div#wrapper-content.production h5, div#wrapper-content.production p {
+}
+
+div.tabs {
+	width:100%;
+	max-width: 900px;
+	margin: 45px 0 15px 0;
+	padding: 0;	
+}
+
+div.tabs a {
+	background-color: #BCBCBC;
+	color: #eee;
+	padding: 15px 8%;
+	border: 1px solid #BCBCBC;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #bcbcbc;
+}
+
+div.tabs a.invert {
+	background-color: #fff;
+	color: #222;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-bottom: 0px solid #fff;
+}
+
+h1.pro, h2.pro, h3.pro, h4.pro, h5.pro {
+}
+
+@media only screen and (max-width: 980px), only screen and (max-device-width: 980px) {
+	.banner {
+		width: 96%;
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+}
+
+@media only screen and (max-width: 920px), only screen and (max-device-width: 920px) {
+	.container {
+		width: 96%;
+		padding: 2%;
+		margin: 0 auto;
+	}
+	
+	div.tabs a {
+	padding: 15px 4%;
+	}
+	
+}
+
+@media only screen and (max-width: 800px), only screen and (max-device-width: 800px) {
+
+	div.logo.left {
+		margin-left: 2px;
+	}
+
+	h1 {
+		font-size: 3.0rem;
+		line-height: 4.5rem;
+		font-weight: 700;
+	}
+	
+	h2, h3 {
+		font-family: Helvetica, sans-serif;
+		font-weight: 400;
+		font-size: 2.2rem;
+		line-height: 3.3rem;
+	}
+	
+	h3{
+		font-size: 1.8rem;
+		line-height: 3.0rem;
+	}
+
+	header.container.ovAuto {
+		width: 100%;
+		max-width: 320px;
+	}
+	
+	.half { width: 100%;}
+
+	.productionCopy {
+		margin-bottom: 10px;
+	}
+	
+	li.delight img.two-thirds, li.family img.two-thirds, li.teach img.two-thirds, li.notProduction img.two-thirds {
+		margin-top: 0px;
+	}
+	
+	li.delight img.one-third, li.family img.one-third, li.teach img.one-third, li.notProduction img.one-third, img.half  {
+		max-width: 300px;
+		position: relative;
+		left:50%;
+		margin-left: -150px;
+	}
+
+	.pale {
+		color: #bcbcbc;
+	}
+	
+	ul.touch {
+		margin-top: 0px;
+	}
+
+	h2, h3 {
+		margin-bottom: 10px;
+		font-weight: 700;
+		/*text-align: center;*/
+	}
+	
+	nav.fixed {
+		position: fixed;
+		background-color: #222;
+		left: 0;
+		top: 0px;
+		width: 100%;
+		text-align: center;
+		z-index: 9;
+ 	}
+ 	
+	.pad {padding: 10px;}
+	.padTop {padding-top: 10px;}
+	.padLeft {padding-left: 10px;}
+	.padRight {padding-right: 10px;}
+	.padBottom {padding-bottom: 10px;}
+	.marign {margin: 10px;}
+	.marginTop {margin-top: 10px;}
+	.marginLeft {margin-left: 10px;}
+	.marginRight {margin-right: 10px;}
+	.marginBottom {margin-bottom: 10px;}
+	
+	.borders {border: 0px;}
+	.borderTop {border-top: 0px;}
+	.borderLeft {border-left: 0px;}
+	.borderRight {border-right: 0px;}
+	.borderBottom {border-bottom: 0px;}
+	
+	header.container.padTop.padBottom.ovAuto {
+		text-align: center;
+	}
+	
+	ul.touch {
+		width: 100%;
+	}
+	
+	ul.touch li {
+		background-color: transparent;
+	}
+	
+	ul.touch li a {
+		font-size: 115%;
+		line-height: 240%;
+		color: #fff;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	
+	.left, .right {
+		float: none;
+	}
+	
+	.ovAuto {
+		overflow: visible;
+	}
+	
+	#index section:first-child {
+		margin-bottom: 10px;
+	}
+	
+	a.logo {
+		position: relative;
+		left: 50%;
+		margin-left: -183px;
+		text-align: center;
+	}	
+	
+	#contentContainer {
+		padding: 0px;
+		border-bottom: solid 1px #bcbcbc;
+	} 
+
+	.mobileHide, ul.touch li.mobileHide {
+		display: none;
+	}
+	
+	.two-thirds, .one-third {
+		width: 100%;
+	}
+	
+	div.container.padLeft.padRight, footer.padLeft.padRight {
+		padding-left: 0px;
+		padding-right: 0px; 
+	}
+	
+	.copy {
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+	
+	.latest {
+		width: 49%;
+	}
+	
+	.latest.even {
+		padding-left: 0.5%;
+	}
+	
+	footer {
+		width: 96%;
+		padding: 10px 2% 10px 2%;
+	}
+	
+	footer p {
+		color: #dedede;
+	}
+}
+
+@media only screen and (max-width: 400px), only screen and (max-device-width: 400px) {
+	ul.touch {
+		width: 100%;
+	}
+	div.tabs {margin-bottom: 0px;}
+	div.tabs a {
+		padding: 15px 2%;
+		display: inline-block;
+	}
+	
+}
+
+

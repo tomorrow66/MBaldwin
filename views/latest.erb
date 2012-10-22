@@ -1,0 +1,61 @@
+<h1>Latest</h1>
+<div id="wrapper-content" class="production">
+<div class="production " name="production">
+<ul class="blog unbordered">
+	<% count = 0 %>
+	<% @blogposts.each do |play| %>
+	<% unless play.title == 'Biography' %>
+		<% if play.image_orientation == 'landscape' %>
+			<% primary, secondary = 'whole', 'whole' %>
+		<% else %>
+			<%  primary, secondary = 'two-thirds', 'one-third' %>
+		<% end %>
+		
+		<% count += 1 %>
+			<% if count.even? %>		
+				<% if play.video_url %>
+					<li class="ovAuto">
+						<div class="right half "><%= embed_video(play.video_url) %></div> 
+						<div class="half productionCopy" >
+							<%= "<h2>#{play.title.style_text}</h2>" if play.title %>
+							<%= play.article.format_text if play.article %>
+						</div>
+					</li>
+				<% else %>
+					<li class="ovAuto <%= play.production_type ? play.production_type : 'notProduction'%>"  >
+						<% if play.image  %> 
+								<img src="/uploads/images/<%= play.image %>" class="right <%= secondary %>" />
+						<% end %>
+						<div class="<%= 'left' if play.image_orientation == 'portrait' %> <%= primary %> productionCopy" >
+							<%= "<h2>#{play.title.style_text}</h2>" if play.title %>
+							<%= play.article.format_text if play.article %>
+						</div>
+						</li>
+				<% end %>
+			<% else %>
+				<% if play.video_url %>
+					<li class="ovAuto">
+						<div class="right half productionCopy" >
+							<%= "<h2>#{play.title.style_text}</h2>" if play.title %>
+							<%= play.article.format_text if play.article %>
+						</div>
+						<div class="half "><%= embed_video(play.video_url) %></div> 
+					</li>
+				<% else %>
+					<li class="ovAuto <%= play.production_type ? play.production_type : 'notProduction' %> >">
+						<% if play.image  %> 
+								<img src="/uploads/images/<%= play.image %>" class="left <%= secondary %>"  />
+						<% end %>
+
+						<div class="<%= 'right' if play.image_orientation == 'portrait' %> <%= primary %> productionCopy" >
+							<%= "<h2>#{play.title.style_text}</h2>" if play.title %>
+							<%= play.article.format_text if play.article %>
+						</div>
+					</li>
+				<% end %>
+		<% end %>
+	<% end %>	
+	<% end %>
+</ul>
+</div>
+</div>

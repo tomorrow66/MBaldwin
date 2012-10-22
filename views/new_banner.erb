@@ -1,0 +1,17 @@
+<div class="column six">	
+	<div id="nav"  class="row six">
+		<a href="#" class="hideshow">New Banner</a>
+	</div>
+	<form enctype="multipart/form-data" action="/admin/new/banner/"  method="post" class="new-banner-form six accordian hide">
+ 		<p>Image: <input type="file" name="image" /> <div>&nbsp; Required: 960px x 375px</div></p>
+ 		<p><input type="text" name="link" class="textfield five" placeholder="Link" /></p>
+		<p><input type="submit" value="Add Banner" class="button" /></p>
+	</form>
+	<div id="banners"  class="row six">
+		<% unless @banners.nil?  %>
+			<ul class="row six bordered">
+				<% @banners.each do |b| %>
+					<li class="ovAuto"><img src="/uploads/banners/<%= b.image %>" class="six" /><a href="/admin/delete/banner/<%= b.id %>" class="warning delete right" >delete</a></li>
+				<% end %>
+		<% end %>
+</div>

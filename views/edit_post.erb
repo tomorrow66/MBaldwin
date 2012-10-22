@@ -1,0 +1,29 @@
+<form enctype="multipart/form-data" action="/admin/edit/post/<%= @blogpost.id  %>"  method="post" class="edit-post-form six">
+
+		<!-- Feature and Production -->
+		<p><input type="checkbox" name="feature" value="true" <%= @blogpost.feature ? 'checked' : "class='check'" %> /> Feature<%= " &nbsp; - &nbsp; <a href='#' class='hideshow'>View Feature Thumb?</a>" if @blogpost.feature %></p>
+		<%= "<span class='hide accordian'><p><img src='/uploads/thumbs/#{@blogpost.feature_thumb}' /></p><a href='#' class='hideshow warning'>Change Feature Thumb</a></span>" if @blogpost.feature_thumb %>
+		<p class="hide accordian">Feature Thumb <span class="warning">(required for feature)</span>: <br />Suggested Size 305px x 169px <br /> &nbsp;  &nbsp; <input type="file" name="feature_thumb" /></p>
+		<p><input type="checkbox" name="production" value="true" class="check" <%= 'checked' if @blogpost.production %> /> Production</p>
+		<p class="<%= 'hide' unless @blogpost.production %> accordian">
+			<select name="production_type">
+				<option value="family" <%= 'selected' if @blogpost.production_type == 'family' %> >Family Plays</option>
+				<option value="teach" <%= 'selected' if @blogpost.production_type == 'teach' %> >Plays that teach</option>
+				<option value="delight" <%= 'selected' if @blogpost.production_type == 'delight' %>  >Plays that delight</option>
+			</select>
+		</p>
+		
+ 		<p><input type="text" name="title" class="six" value="<%= @title ? @title : @blogpost.title %>" /></p>
+ 		
+ 		<!-- Image and triggers -->
+ 		<%= "<span class='video'><iframe src='http://player.vimeo.com/video/#{@blogpost.video_url}?title=0&amp;byline=0&amp;portrait=0' class='' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></span>" if @blogpost.video_url %>
+ 		<%= @blogpost.image.nil? ? "<p><a href='#' class='hideshow'>Add Image?</a></p>" : "<p><img src='/uploads/images/#{@blogpost.image}' class='six' /></p><p><a href='#' class='hideshow'>Change Image?</a></p>"  %>
+ 		<p class="hide accordian"><input type='file' name='image' /><br /> &nbsp; Suggested Sizes: 300px x 400px or 960px x 300px</p>
+ 		<p><a href="#" class="hideshow">Toggle Formatting help</a></p>
+ 		<%= erb :format_helpers, layout: false %>
+ 		<p><textarea type="text" name="article" class="six" rows="8" ><%= @article ? @article : @blogpost.article %></textarea></p>
+ 		<p><input type="text" name="video_url" class="textfield six" placeholder="Video url" <%= "value='#{@blogpost.video_url}'" if @blogpost.video_url %> /></p>
+		
+		<p><input type="submit" value="Save Edits" class="button" /><a href="/admin/delete/post/<%= @blogpost.id %>" class="right warning delete">delete</a>
+</p>
+</form>

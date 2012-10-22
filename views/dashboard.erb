@@ -1,0 +1,22 @@
+<div class="column six">	
+	<div id="nav"  class="row six">
+		<a href="/admin/new/post/">New Post</a>
+	</div>
+	<div id="posts"  class="row six">
+		<% unless @blogposts.nil?  %>
+			<ul class="row six bordered">
+				<% @blogposts.each do |p|  %>
+					<% unless p.title == 'Biography' %>
+						<% if  p.title.include?("</a>") %>
+								 <li class="column six"><%= p.title.style_text %>(Outbound Link)</li>
+						<% elsif p.title.empty? %>
+								 <li class="column six"><a href="/post/<%= p.id %>" >Permalink</a><a href="/admin/edit/post/<%= p.id %>"  class="right">edit</a></li>
+						<% else	%>
+									<li class="column six"><a href="/post/<%= p.id %>" ><%= p.title.style_text %></a><a href="/admin/edit/post/<%= p.id %>" class="right">edit</a></li>
+						<%	end	%>
+					<% end %>
+				<% end %>
+			</ul>
+		<% end %>
+	</div>
+</div>

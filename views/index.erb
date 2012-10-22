@@ -1,0 +1,28 @@
+<div id="index" class="ovAuto">
+	<section class="marginRight sub one-third right">
+		<h3 class="">Biography</h3>
+		<div class="copy">
+			<%= @biography.article.format_text.truncate(49) %> &nbsp; <a href="/biography">More</a>
+		</div>
+	</section>
+	<section class="sub two-thirds left borderRight">
+		<h3 class="">Feature</h3>
+		<div class="copy">
+			<% count = 0 %>
+			<% @features.each do |f| %>
+				<% count += 1 %>
+				<% if count.even? %>
+					<a href="post/<%= f.id %>"><img src="uploads/thumbs/<%= f.feature_thumb %>" alt="" class="latest"  /></a>
+				<% else %>	
+					<a href="post/<%= f.id %>"><img src="uploads/thumbs/<%= f.feature_thumb %>" alt="" class="latest even"  /></a>
+				<% end %>
+			<% end %>
+		</div>
+	</section>
+</div>
+
+<!-- 
+	Ajax get request loads test.htlm
+	<div id="results"></div>
+ <section class="container"><a href="#" class="load">Load</a></section> 
+-->

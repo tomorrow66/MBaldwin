@@ -1,0 +1,19 @@
+
+			<div class="ovAuto padLeft padRight padBottom">
+				<h1 class="left">Margaret Baldwin</h1>
+				<img src="../images/bar.png" class="mobileHide" style="margin-top:40px; margin-left: 20px; margin-bottom: 0; width: 55%; height: 2px;" />
+				<h2 class="right mobileHide padLeft" style="margin-top: -10px;"><%= @biography.title %></h2>
+			</div>
+			<% if @biography.video_url %>
+				<div class="center"><%= embed_video(video_url) %></div>
+			<% else %>
+				<img src="uploads/images/<%= @biography.image %>" <%= @biography.image_orientation == 'landscape' ? "width='100%'" : "width='48%'" %> />
+			<% end %>
+		<div id="content" class="container padTop">
+				<div id="biography">
+					<section class="rounded copy padBottom padTop">
+						<%= @biography.article.format_text if @biography.article %>
+					</section>
+				</div>
+		</div>
+

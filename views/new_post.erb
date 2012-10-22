@@ -1,0 +1,23 @@
+<form enctype="multipart/form-data" action="/admin/new/post/"  method="post" class="new-post-form six">
+
+		<!-- Feature and Production -->
+		<p><input type="checkbox" name="feature" value="true" class="check" /> Feature</p>
+		<p class="hide accordian">Feature Thumb <span class="warning">(required for feature)</span>: <br />Suggested Size 305px x 169px <br /> &nbsp;  &nbsp; <input type="file" name="feature_thumb" /></p>
+		<p><input type="checkbox" name="production" value="true" class="check" /> Production</p>
+		<p class="hide accordian">
+			<select name="production_type">
+				<option value="family">Family Plays</option>
+				<option value="teach">Plays that teach</option>
+				<option value="delight">Plays that delight</option>
+			</select>
+		</p>
+
+ 		<p><input type="text" name="title" class="textfield six" placeholder="Title" <%= "value='#{@title}'" if @title %> /></p>
+ 		<p><a href="#" class="hideshow">Toggle Formatting help</a></p>
+ 		<%= erb :format_helpers, layout: false %>
+ 		<p><textarea type="text" name="article" class="six" rows="8" placeholder="Article"><%= "#{@article}" if @article %></textarea></p>
+ 		<p>Image: <input type="file" name="image" /><div> &nbsp; Suggested Sizes: 300px x 400px or 960px x 300px</div></p>
+ 		<p><input type="text" name="video_url" class="textfield six" placeholder="Video url" /></p>
+ 		
+		<p><input type="submit" value="Add Post" class="button" /></p>
+</form>

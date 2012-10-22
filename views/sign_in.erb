@@ -1,0 +1,18 @@
+<h2>Sign In</h2>
+<div id="content-container">
+	<%= alert %>
+	<div id="sign-in"  class="center">
+
+		<form action="/sign-in" id="sign-in" method="post">
+			<p>
+				<input type="text" name="email" id="email" class="textfield" placeholder="Email" value="<%= params[:email] %>" />
+			</p>
+			<p>
+				<input type="password" name="password" id="password" class="textfield" placeholder="Password" value="<%= params[:password] %>" />
+			</p>
+			<p>
+				<input type="submit" name="commit" class="button" value="Sign in" />
+			</p>
+		</form>
+	</div>	
+</div>

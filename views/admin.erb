@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=0.895, user-scalable = no">
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Admin Layout</title>
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="stylesheet" href="/stylesheets/design.css" />
+	<script type="text/javascript" src="/scripts/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="/scripts/jquery-ui-1.8.22.custom.min.js"></script>
+	<script type="text/javascript" src="/scripts/fitvids.js"></script>
+	<script type="text/javascript" src="/scripts/site.js"></script>
+
+	<script>
+  $(document).ready(function(){
+    // Target your .container, .wrapper, .post, etc.
+    $(".video").fitVids();
+  });
+  </script>
+</head>
+
+<body>
+	
+	<div class="grid eight offset-2">
+		<div class="row"><h1 class="column two logo">Admin</h1></div>
+		<div class="row eight">
+			<div class="column two">
+			<% if session[:user] then %>
+				<ul class="touch admin">
+					<li><a href="/dashboard" class="two">DASHBOARD</a></li>
+					<li><a href="/admin/new/banner" class="two">BANNERS</a></li>
+					<li><a href="/admin/edit/biography" class="two">EDIT BIO</a></li>
+					<li><a href="/admin/readme" class="two">README</a></li>
+					<li><a href="/sign-out" class="two">SIGN OUT</a></li>
+				</ul>
+			</div>
+			<% end %>
+			<h2 class="column four title"><%= @pgtitle %></h2>
+		</div>
+		<div class="row eight">
+			<div id="content-container" class="row six offset-2">	
+				<%= alert %>
+				<%= yield %>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+

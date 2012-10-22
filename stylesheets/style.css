@@ -1,0 +1,103 @@
+@import url(http://fonts.googleapis.com/css?family=Shanti);
+
+body, html {
+	font-family: 'Shanti', serif;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.txtcenter {
+	text-align: center;
+}
+
+.block {
+	display: block;
+}
+
+.ovauto {
+	overflow: auto;	
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.strike {
+	text-decoration: line-through;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.hide {
+	display: none;
+}
+
+.inline {
+	display: inline;
+}
+
+.helpers {
+	border: 1px dashed #676767;
+	background-color: #ffffcc;
+	overflow: hidden;		
+}
+
+.readme li {
+	padding-top: 6px;
+	padding-bottom: 6px;	
+}
+
+a {
+	text-decoration: none;
+}
+
+a.warning {color: #ff0000;}
+
+.ovAuto {overflow: auto;}
+
+h1, h2, h3, h4, h5 {
+	font-family: Helvetica, sans-serif;
+}
+
+h1.logo {
+	margin-bottom: 0px;
+}
+
+ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+ul.touch.admin {
+	border-right: 1px solid silver;
+}
+
+ul.bordered li:first-child {
+	border-top: 1px solid silver;
+}
+
+ul.bordered li {
+	border-bottom: 1px solid silver;
+	padding: 11px 0;
+}
+
+@media (max-width: 768px)	 {
+
+	h2.title {
+		margin: 0px;
+	}
+	
+	ul.touch.admin {
+		border-right: 0px solid transparent;
+	}
+	
+}

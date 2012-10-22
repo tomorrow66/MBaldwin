@@ -1,0 +1,28 @@
+<form enctype="multipart/form-data" action="/admin/edit/post/<%= @biography.id  %>"  method="post" class="edit-post-form six">
+
+		<!-- Feature and Production -->
+		<p class="hide"><input type="checkbox" name="feature" value="true" <%= @biography.feature ? 'checked' : "class='check'" %> /> Feature<%= " &nbsp; - &nbsp; <a href='#' class='hideshow'>View Feature Thumb?</a>" if @biography.feature %></p>
+		<%= "<span class='hide accordian'><p><img src='/uploads/thumbs/#{@biography.feature_thumb}' /></p><a href='#' class='hideshow warning'>Change Feature Thumb</a></span>" if @biography.feature_thumb %>
+		<p class="hide accordian">Feature Thumb <span class="warning">(required for feature)</span>: <br /> &nbsp;  &nbsp; <input type="file" name="feature_thumb" /></p>
+		<p class="hide"><input type="checkbox" name="production" value="true" class="check" <%= 'checked' if @biography.production %> /> Production</p>
+		<p class="<%= 'hide' unless @biography.production %> accordian">
+			<select name="production_type">
+				<option value="famiy" <%= 'selected' if @biography.production_type == 'family' %> >Family Plays</option>
+				<option value="teach" <%= 'selected' if @biography.production_type == 'teach' %> >Plays that teach</option>
+				<option value="delight" <%= 'selected' if @biography.production_type == 'delight' %>  >Plays that delight</option>
+			</select>
+		</p>
+		
+ 		<p class="hide"><input type="text" name="title" class="six" value="<%= @title ? @title : @biography.title %>" /></p>
+ 		
+ 		<!-- Image and triggers -->
+ 		<%= "<span class='video'><iframe src='http://player.vimeo.com/video/#{@biography.video_url}?title=0&amp;byline=0&amp;portrait=0' class='' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></span>" if @biography.video_url %>
+ 		<%= @biography.image.nil? ? "<p><a href='#' class='hideshow'>Add Image?</a></p>" : "<p><img src='/uploads/images/#{@biography.image}' class='six' /></p><p><a href='#' class='hideshow'>Change Image?</a></p>"  %>
+ 		<p class="hide accordian"><input type='file' name='image' /><br /> &nbsp; Required: 960px x 375px</p>
+ 		<p><a href="#" class="hideshow">Toggle Formatting help</a></p>
+ 		<%= erb :format_helpers, layout: false %>
+ 		<p><textarea type="text" name="article" class="six" rows="20" ><%= @biography.article %></textarea></p>
+ 		<p><input type="text" name="video_url" class="textfield six" placeholder="Video url" /></p>
+		
+		<p><input type="submit" value="Save Edits" class="button" /></p>
+</form>

@@ -1,0 +1,21 @@
+<div class="ovAuto">
+<% if @blogpost.video_url %>
+<h1><%= @blogpost.title.style_text %></h1>
+<%= embed_video(@blogpost.video_url) %>
+<%= "<div class='padTop padBottom'>#{@blogpost.article.format_text}</div>" unless @blogpost.article.nil? %>
+<% else %>
+	<% if @blogpost.image %>
+		<% if @blogpost.image_orientation == 'landscape'%>
+			<% img, text = "class='whole padTop padBottom'", "class='whole padBottom'"  %>
+			<h1><%= @blogpost.title.style_text %></h1>
+			<img src="/uploads/images/<%= @blogpost.image %>" <%= img %> />
+			<%= "<div #{text} >#{@blogpost.article.format_text}</div>" unless @blogpost.article.nil? %>
+		<% elsif @blogpost.image_orientation == 'portrait' %>
+			<% right, left = "class='two-thirds right padBottom'", "class='one-third left'" %>
+			<%= "<div #{right} ><h1> #{@blogpost.title.style_text}</h1>#{@blogpost.article.format_text}</div>" unless @blogpost.article.nil? %>
+			<img src="/uploads/images/<%= @blogpost.image %>" <%= left %> />
+		<% end %>
+	<% end %>
+<% end %>
+</div>
+

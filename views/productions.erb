@@ -1,0 +1,74 @@
+<div id="productions">
+	<section class="copy rounded">
+		<h1>Productions</h1>
+		<div class="tabs">
+			<a href="#" id="family" class="tabShow invert">Family <span class="">Plays</span></a>
+			<a href="#" id="delight" class="tabShow" ><span class="mobileHide">Plays </span>That Delight</a>
+			<a href="#" id="teach" class="tabShow"><span class="mobileHide">Plays </span>That Teach</a>
+		</div>
+		
+			<div id="wrapper-content" class="production">
+				<div class="production " name="production">
+					<ul class="blog">
+						
+						<%### Below is a dirty way to get each production_type to start with an image on the left %>
+						
+						<% [@delight, @family, @teach].each do |production| %>
+							<% count = 0 %>
+							<% production.each do |play| %>
+								<% if play.image_orientation == 'landscape' %>
+									<% primary, secondary = 'whole', 'whole' %>
+								<% else %>
+									<%  primary, secondary = 'two-thirds', 'one-third' %>
+								<% end %>
+					
+							<% count += 1 %>
+								<% if count.even? %>		
+									<% if play.video_url %>
+										<li class="ovAuto <%= play.production_type == 'family' ? play.production_type : play.production_type + ' hide'  %>">
+											<div class="right half "><%= embed_video(play.video_url) %></div> 
+											<div class="half productionCopy" >
+												<%= "<h2>#{play.title.style_text}</h2>" if play.title %>
+												<%= play.article.format_text if play.article %>
+											</div>
+										</li>
+									<% else %>
+										<li class="ovAuto <%= play.production_type == 'family' ? play.production_type : play.production_type + ' hide'  %>"  >
+											<% if play.image  %> 
+													<img src="/uploads/images/<%= play.image %>" class="right <%= secondary %>" />
+											<% end %>
+											<div class="<%= 'left' if play.image_orientation == 'portrait' %> <%= primary %> productionCopy" >
+												<%= "<h2>#{play.title.style_text}</h2>" if play.title %>
+												<%= play.article.format_text if play.article %>
+											</div>
+											</li>
+									<% end %>
+								<% else %>
+									<% if play.video_url %>
+										<li class="ovAuto" <%= play.production_type == 'family' ? play.production_type : play.production_type + ' hide'  %>>
+											<div class="right half productionCopy" >
+												<%= "<h2>#{play.title.style_text}</h2>" if play.title %>
+												<%= play.article.format_text if play.article %>
+											</div>
+											<div class="half "><%= embed_video(play.video_url) %></div> 
+										</li>
+									<% else %>
+										<li class="ovAuto <%= play.production_type == 'family' ? play.production_type : play.production_type + ' hide'  %>	">
+											<% if play.image  %> 
+													<img src="/uploads/images/<%= play.image %>" class="left <%= secondary %>"  />
+											<% end %>
+					
+											<div class="<%= 'right' if play.image_orientation == 'portrait' %> <%= primary %> productionCopy" >
+												<%= "<h2>#{play.title.style_text}</h2>" if play.title %>
+												<%= play.article.format_text if play.article %>
+											</div>
+										</li>
+									<% end %>
+							<% end %>
+							<% end %>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+	</section>
+</div>
