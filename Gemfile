@@ -1,6 +1,8 @@
 # Uses rubygems.org as the default gem repo
 source :rubygems
 
+gem 'backports', '~> 2.8.2'
+
 # Used for accessing documents over HTTP
 require 'net/http'
 
