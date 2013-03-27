@@ -12,3 +12,5 @@ set :session_secret, 'secret123'
 
 set :public_folder, 'public'
 enable :run
+
+DataMapper.finalize
