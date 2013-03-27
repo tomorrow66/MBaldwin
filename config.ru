@@ -1,3 +1,2 @@
-# Loads the app and runs it on a Rack server
-require './chassis'
+require './app'
 run Sinatra::Application
